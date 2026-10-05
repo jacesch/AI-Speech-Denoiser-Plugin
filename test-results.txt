@@ -1,0 +1,41 @@
+PASS rate=8000 model=CNN variable blocks
+PASS rate=8000 model=FF variable blocks
+PASS rate=11025 model=CNN variable blocks
+PASS rate=11025 model=FF variable blocks
+PASS rate=12000 model=CNN variable blocks
+PASS rate=12000 model=FF variable blocks
+PASS rate=16000 model=CNN variable blocks
+PASS rate=16000 model=FF variable blocks
+PASS rate=22050 model=CNN variable blocks
+PASS rate=22050 model=FF variable blocks
+PASS rate=24000 model=CNN variable blocks
+PASS rate=24000 model=FF variable blocks
+PASS rate=32000 model=CNN variable blocks
+PASS rate=32000 model=FF variable blocks
+PASS rate=44100 model=CNN variable blocks
+PASS rate=44100 model=FF variable blocks
+PASS rate=48000 model=CNN variable blocks
+PASS rate=48000 model=FF variable blocks
+PASS rate=88200 model=CNN variable blocks
+PASS rate=88200 model=FF variable blocks
+PASS rate=96000 model=CNN variable blocks
+PASS rate=96000 model=FF variable blocks
+PASS rate=176400 model=CNN variable blocks
+PASS rate=176400 model=FF variable blocks
+PASS rate=192000 model=CNN variable blocks
+PASS rate=192000 model=FF variable blocks
+PASS partition/reset invariance rate=44100 model=CNN
+PASS partition/reset invariance rate=44100 model=FF
+PASS partition/reset invariance rate=48000 model=CNN
+PASS partition/reset invariance rate=48000 model=FF
+PASS 80 ms bypass/dry latency
+PASS live controls/model/bypass changes
+PASS batch prediction ordering
+CNN block=256 mean=1.382 ms max=20.516 ms deadline=5.333 ms misses=25/188
+CNN block=1920 mean=9.229 ms max=15.728 ms deadline=40.000 ms misses=0/30
+CNN block=3840 mean=18.303 ms max=26.970 ms deadline=80.000 ms misses=0/30
+FF block=256 mean=1.148 ms max=15.039 ms deadline=5.333 ms misses=18/188
+FF block=1920 mean=8.448 ms max=14.834 ms deadline=40.000 ms misses=0/30
+FF block=3840 mean=15.395 ms max=22.286 ms deadline=80.000 ms misses=0/30
+ALL FUNCTIONAL TESTS PASSED
+Additional verification: 1 kHz dry/wet phase alignment passed for both models at all 13 rates (maximum phase error 0.002181 rad). Double/empty input and loading models from another working directory also passed.
